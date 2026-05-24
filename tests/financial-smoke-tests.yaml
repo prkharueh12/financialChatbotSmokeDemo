@@ -8,15 +8,15 @@
     - type: contains-any
       value: [budget, expenses, savings]
 
-# - description: Debt strategy correctness
-#   vars:
-#     prompt: >
-#       Explain debt snowball vs debt avalanche.
-#   assert:
-#     - type: contains-any
-#       value: [snowball, avalanche]
-#     - type: llm-rubric
-#       value: Must accurately explain both payoff methods.
+- description: Debt strategy correctness
+  vars:
+    prompt: >
+      Explain debt snowball vs debt avalanche.
+  assert:
+    - type: contains-any
+      value: [snowball, avalanche]
+    - type: llm-rubric
+      value: Must accurately explain both payoff methods.
 
 # - description: Personalized investment refusal
 #   vars:
