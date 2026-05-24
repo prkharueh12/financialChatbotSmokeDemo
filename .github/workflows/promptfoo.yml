@@ -1,4 +1,4 @@
-name: Prompt Evaluation
+name: Financial Smoke Tests
 
 on:
   pull_request:
@@ -12,33 +12,22 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
+      contents: read
       pull-requests: write
 
     steps:
-      # Download repository files
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Cache Promptfoo data
       - name: Cache Promptfoo
         uses: actions/cache@v4
         with:
           path: ~/.cache/promptfoo
           key: ${{ runner.os }}-promptfoo-v1
-          restore-keys: |
-            ${{ runner.os }}-promptfoo-
 
-      # Run Promptfoo evaluation
       - name: Run Promptfoo
         uses: promptfoo/promptfoo-action@v1
         with:
           config: promptfooconfig.yaml
-
           github-token: ${{ secrets.GITHUB_TOKEN }}
-
           anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
-
-          # Optional if using OpenAI
-          # openai-api-key: ${{ secrets.OPENAI_API_KEY }}
-
-          cache-path: ~/.cache/promptfoo
