@@ -1,0 +1,10 @@
+description: "Financial Smoke Tests"
+
+prompts:
+  - file://prompts/financial-system-prompt.txt
+
+providers:
+  - file://providers/financial-smoke-providers.yaml
+
+tests:
+  - file://tests/financial-smoke-tests.yaml

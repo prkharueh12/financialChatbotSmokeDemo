@@ -1,0 +1,9 @@
+- id: anthropic:messages:claude-haiku-4-5-20251001
+  label: Claude 4.5 Haiku
+  config:
+    temperature: 0.3
+
+- id: google:gemini-2.5-pro
+  label: gemini 2.5 pro
+  config:
+    temperature: 0.3
